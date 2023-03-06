@@ -1,0 +1,61 @@
+<div mat-dialog-title>Employee System</div>
+
+<form [formGroup]="formdata" (ngSubmit)="onSubmit()">
+  <div mat-dialog-content class="content">
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input
+          matInput
+          placeholder="name"
+          type="text"
+          formControlName="name"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          placeholder="email"
+          type="email"
+          formControlName="email"
+          required
+        />
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Address</mat-label>
+        <input
+          matInput
+          placeholder="address"
+          type="text"
+          formControlName="address"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Phone</mat-label>
+        <input
+          matInput
+          placeholder="phone"
+          type="tel"
+          formControlName="phone"
+          required
+        />
+      </mat-form-field>
+    </div>
+  </div>
+  <div mat-dialog-actions class="action">
+    <button
+      mat-raised-button
+      color="warn"
+      type="button"
+      [mat-dialog-close]="false"
+    >
+      Cancel
+    </button>
+    <button mat-raised-button color="primary" type="submit">{{data ? 'Update' : 'Save'}}</button>
+  </div>
+</form>
